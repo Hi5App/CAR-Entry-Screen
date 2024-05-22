@@ -57,7 +57,6 @@ void LoginWindow::verifyCachedAccount() {
     if(!accountExpiredTime.empty()) {
         timestampeAccountExpired = std::stoll(accountExpiredTime);
     }
-
     if(!cachedUserName.empty() && !cachedPassword.empty() && timestampeAccountExpired > timestampeNow) {
         doLogin(QString::fromStdString(cachedUserName), QString::fromStdString(cachedPassword), true);
     }

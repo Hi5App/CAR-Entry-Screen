@@ -87,6 +87,13 @@ public:
 
         int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         QString reason = reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
+        json emptyJson;
+
+        if(code == 0){
+            QMessageBox::critical(parent, "Info", QString::fromStdString(std::string(__func__) + " Failed!" + reason.toStdString()));
+            return emptyJson;
+        }
+
         QByteArray tempArray = reply->readAll();
         std::string jsonString = tempArray.toStdString();
         // 解析 JSON 字符串为 JSON 对象
@@ -98,7 +105,6 @@ public:
         if(defaultErrorHandler(__func__, code, reason, response_json, parent)){
             return response_json;
         }
-        json emptyJson;
         return emptyJson;
     }
 
@@ -120,18 +126,23 @@ public:
 
         int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         QString reason = reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
+        json emptyJson;
+
+        if(code == 0){
+            QMessageBox::critical(parent, "Info", QString::fromStdString(std::string(__func__) + " Failed!" + reason.toStdString()));
+            return emptyJson;
+        }
+
         QByteArray tempArray = reply->readAll();
         std::string jsonString = tempArray.toStdString();
         // 解析 JSON 字符串为 JSON 对象
         json response_json = json::parse(jsonString);
-
         reply->close();
         reply->deleteLater();
 
         if(defaultErrorHandler(__func__, code, reason, response_json, parent)){
             return response_json;
         }
-        json emptyJson;
         return emptyJson;
     }
 
@@ -158,6 +169,13 @@ public:
 
         int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         QString reason = reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
+        json emptyJson;
+
+        if(code == 0){
+            QMessageBox::critical(parent, "Info", QString::fromStdString(std::string(__func__) + " Failed!" + reason.toStdString()));
+            return emptyJson;
+        }
+
         QByteArray tempArray = reply->readAll();
         std::string jsonString = tempArray.toStdString();
         // 解析 JSON 字符串为 JSON 对象
@@ -169,7 +187,6 @@ public:
         if(defaultErrorHandler(__func__, code, reason, response_json, parent)){
             return response_json;
         }
-        json emptyJson;
         return emptyJson;
     }
 
@@ -192,6 +209,13 @@ public:
 
         int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         QString reason = reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
+        json emptyJson;
+
+        if(code == 0){
+            QMessageBox::critical(parent, "Info", QString::fromStdString(std::string(__func__) + " Failed!" + reason.toStdString()));
+            return emptyJson;
+        }
+
         QByteArray tempArray = reply->readAll();
         std::string jsonString = tempArray.toStdString();
         // 解析 JSON 字符串为 JSON 对象
@@ -203,7 +227,6 @@ public:
         if(defaultErrorHandler(__func__, code, reason, response_json, parent)){
             return response_json;
         }
-        json emptyJson;
         return emptyJson;
     }
 
@@ -243,6 +266,13 @@ public:
 
         int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         QString reason = reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
+        json emptyJson;
+
+        if(code == 0){
+            QMessageBox::critical(parent, "Info", QString::fromStdString(std::string(__func__) + " Failed!" + reason.toStdString()));
+            return emptyJson;
+        }
+
         QByteArray tempArray = reply->readAll();
         std::string jsonString = tempArray.toStdString();
         // 解析 JSON 字符串为 JSON 对象
@@ -254,7 +284,6 @@ public:
         if(defaultErrorHandler(__func__, code, reason, response_json, parent)){
             return response_json;
         }
-        json emptyJson;
         return emptyJson;
     }
 
@@ -280,6 +309,13 @@ public:
 
         int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         QString reason = reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
+        json emptyJson;
+
+        if(code == 0){
+            QMessageBox::critical(parent, "Info", QString::fromStdString(std::string(__func__) + " Failed!" + reason.toStdString()));
+            return emptyJson;
+        }
+
         QByteArray tempArray = reply->readAll();
         std::string jsonString = tempArray.toStdString();
         // 解析 JSON 字符串为 JSON 对象
@@ -291,7 +327,6 @@ public:
         if(defaultErrorHandler(__func__, code, reason, response_json, parent)){
             return response_json;
         }
-        json emptyJson;
         return emptyJson;
     }
 
